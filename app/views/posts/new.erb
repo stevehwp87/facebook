@@ -1,0 +1,25 @@
+<a href="/">
+<p>HOME</p>
+</a>
+<h1>Create your new post</h1>
+
+
+<% if @post %>
+  <% @post.errors.full_messages.each do |e| %>
+    <p><%= e %></p>
+  <% end %>
+<% end %>
+
+<form action="/posts" method="POST">
+
+  <label>Status:</label>
+  <br><br>
+   <textarea name="post[post]" rows="20" cols="50"></textarea>
+  <br><br>
+  <p>Please key in the tag name</p>
+  Tag: <input type="text" name="tags[name]" >
+  (please seperate your tags with ",")
+  <br><br>
+  <input type="submit">
+
+</form>

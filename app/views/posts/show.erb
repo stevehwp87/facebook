@@ -1,0 +1,21 @@
+<a href="/">
+<p>HOME</p>
+</a>
+
+<% @post.each do |c| %>
+<%= c.post %>
+<% end %>
+
+
+
+    <form action="/posts/<%= @post.id %>" method="POST">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="Delete">
+    </form>
+
+  <form action="/posts/<%= @post.id %>/edit" method="POST">
+      <input type="hidden" name="_method" value="GET">
+      <input type="submit" value="Edit">
+    </form>
+
+<a href="/posts/new">Create a new post</a>
